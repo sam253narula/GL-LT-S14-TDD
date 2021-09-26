@@ -2,7 +2,9 @@ package com.greatlearning.testing.demo;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 
 public class CalculatorTest {
@@ -25,7 +27,6 @@ public class CalculatorTest {
 //		calculator.divide(10, 0);
 //	}
 	
-	
 	/* Method 2 of testing exceptions, below method is for deprecated @Rules way of Expected Exception
 	 *  or Deprecated way for JUnit version 4.13.2 
 	 */
@@ -40,7 +41,7 @@ public class CalculatorTest {
 	// Method 2 Way for Junit version 4.13.2 and above, now you don't need @Rule
 	@Test
 	public void shouldThrowArithmeticExceptionWhenDivideByZero() {
-		ArithmeticException ex = Assert.assertThrows(ArithmeticException.class, () -> calculator.divide(10, 0));
+		ArithmeticException ex = Assert.assertThrows(ArithmeticException.class, () -> calculator.divide(0, 10));
 		Assert.assertEquals("cant divide any number by 0, java does support infinity answer", ex.getMessage());
 	}
 	

@@ -3,14 +3,18 @@ package com.greatlearning;
 public class StudentResource {
 	
 	StudentService studentService;
+	AdmissionService admissionService;
 	
-	public StudentResource(StudentService studentService) {
+	public StudentResource(StudentService studentService, AdmissionService admissionService) {
 		this.studentService= studentService; 
+		this.admissionService = admissionService;
 	}
 	
-	public int saveStudent(String name, int age, String address) {
+	public String saveStudent(String name, int age, String address) {
 		Student student  =  new Student(name, age, address);
 		int studentId = studentService.saveStudent(student);
-		return studentId;
+		String result  = admissionService.saveAdmission("Admissioned Saved");
+		System.out.println(studentId + result);
+		return studentId + result ;
 	}
 }

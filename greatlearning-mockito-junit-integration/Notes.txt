@@ -1,0 +1,12 @@
+https://pitest.org/
+
+
+//Open terminal and execute
+mvn org.pitest:pitest-maven:mutationCoverage
+
+
+// From second run to have faster run
+mvn -DwithHistory org.pitest:pitest-maven:mutationCoverage
+
+Note: PIT test works with JUnit 4.6 and above but does not works properly with JUnit5, form below
+https://githubmemory.com/repo/pitest/pitest-junit5-plugin/issues

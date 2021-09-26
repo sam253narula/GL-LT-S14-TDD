@@ -26,19 +26,18 @@ public class ParkingServiceImpl implements ParkingService {
 		 long id = vehicle.getId();
 		 List<Vehicle> parkedVehicles = new ArrayList<>();
 		 parkedVehicles = parkingRepository.findAll();
-		 boolean available = true;
 		 for(Vehicle v: parkedVehicles) {
 			 if(v.getId() == id) {
-				 available = false; 
-				 throw new RuntimeException("Slot not available");
+				 throw new RuntimeException("Parking lot is not available");
 			 }
 		 }
 		 if (vehicle.getId() <= 10 && vehicle.getId() != 0) {
 			parkingRepository.save(vehicle);
 			return "Parked";
 		}
-		return "Slot not available";
-		
+		 else {
+			 throw new RuntimeException("Parking lot is not available Kindly provide a parkig lot number between 1 to 10, according to availability of parking slots");
+		 }
 	}
 
 	@Override

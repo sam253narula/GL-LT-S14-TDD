@@ -12,7 +12,7 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- Junit Supporting library, hamcrest library is required when you use Junit 4.13.2 an above -->
+		<!-- Junit Supporting library, hamcrest library is required when you use Junit 4.13.2 and above -->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
