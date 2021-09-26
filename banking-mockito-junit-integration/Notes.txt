@@ -1,4 +1,9 @@
+Reference material:
 https://pitest.org/
+
+// To gain detailed understanding about how mutations are done by this PIT plugin and what are the disadvantages
+https://www.triology.de/en/blog-entries/mutation-testing
+
 
 
 //Open terminal and execute
@@ -10,3 +15,21 @@ mvn -DwithHistory org.pitest:pitest-maven:mutationCoverage
 
 Note: PIT test works with JUnit 4.6 and above but does not works properly with JUnit5, form below
 https://githubmemory.com/repo/pitest/pitest-junit5-plugin/issues
+
+
+With below lien of code you can make the PIT test command short
+			<plugin>
+				<groupId>org.pitest</groupId>
+				<artifactId>pitest-maven</artifactId>
+				<version>1.4.2</version>
+				<executions>
+                    <execution>
+                        <id>pit-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>mutationCoverage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+			</plugin>
+
