@@ -17,7 +17,7 @@ Note: PIT test works with JUnit 4.6 and above but does not works properly with J
 https://githubmemory.com/repo/pitest/pitest-junit5-plugin/issues
 
 
-With below lien of code you can make the PIT test command short
+With below lien of code you can make the PIT test command short, like mvn vlesn test
 			<plugin>
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>

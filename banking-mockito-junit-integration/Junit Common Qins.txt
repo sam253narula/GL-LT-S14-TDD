@@ -1,0 +1,11 @@
+Mockito Static issue and its resolution:
+https://stackoverflow.com/questions/65201496/mockito-mocked-static-method-always-returns-null
+
+Common Qins:
+Difference between @Before, @BeforeClass,  @BeforeEach and @BeforeAll
+The code marked @Before is executed before each test, while @BeforeClass runs once before the entire test fixture. If your test class has ten tests, @Before code will be executed ten times, but @BeforeClass will be executed only once.
+
+In general, you use @BeforeClass when multiple tests need to share the same computationally expensive setup code. Establishing a database connection falls into this category. You can move code from @BeforeClass into @Before, but your test run may take longer. 
+Note that the code marked @BeforeClass is run as static initializer, therefore it will run before the class instance of your test fixture is created.
+
+In JUnit 5, the tags @BeforeEach and @BeforeAll are the equivalents of @Before and @BeforeClass in JUnit 4. Their names are a bit more indicative of when they run, loosely interpreted: 'before each tests' and 'once before all tests'.
