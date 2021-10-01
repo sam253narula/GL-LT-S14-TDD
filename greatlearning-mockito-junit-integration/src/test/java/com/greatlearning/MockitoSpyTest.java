@@ -32,6 +32,9 @@ public class MockitoSpyTest {
 		assertEquals(2, listSpy.size());
 		assertEquals("Samarth", listSpy.get(1));
 		
+		System.out.println("listSpy"+ listSpy);
+		System.out.println("list"+ list);
+		
 	}
 	
 	@Test

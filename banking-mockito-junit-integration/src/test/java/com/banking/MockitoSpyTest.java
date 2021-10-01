@@ -1,8 +1,10 @@
 package com.banking;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -10,16 +12,28 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class MockitoSpyTest {
 
-	
+
 	@Mock
-	private AccountService accountService;
+	private AccountDAO accountDAO;
+
+//	@InjectMocks
+//	AccountService accountService= new AccountService();
 	
+	AccountService accountService ;
+	
+	@Before
+	public void setup() {
+		 accountService =  new AccountService();
+	}
+
 	@Test
 	public void demoTest2() {
-		AccountDAO accountDAO = new AccountDAO();
-		AccountService accountService = new AccountService(accountDAO);
 		AccountService accountSpy = Mockito.spy(accountService);
-		int studentId = accountSpy.saveaccount(new Account("987654321", 20000, "Ram Charan", Type.CURRENT));
-		Assert.assertEquals(1, studentId);
+		accountSpy.logInfo();
+		Account account = new Account("987654321", 20000, "Ram Charan", Type.CURRENT);
+		
+	//	Mockito.when(accountDAO.save(account)).thenReturn(1);
+		Mockito.lenient().when(accountDAO.save(account)).thenReturn(1);
+		Assert.assertEquals(1, accountService.saveaccount(account));
 	}
 }

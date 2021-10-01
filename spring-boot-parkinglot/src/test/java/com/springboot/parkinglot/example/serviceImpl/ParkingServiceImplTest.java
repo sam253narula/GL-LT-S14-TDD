@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.springboot.parkinglot.example.entity.Vehicle;
@@ -21,7 +20,7 @@ import com.springboot.parkinglot.example.repository.ParkingRepository;
 @SpringBootTest
 public class ParkingServiceImplTest {
 	
-	 List<Vehicle> vehicles = new ArrayList<Vehicle>();
+	List<Vehicle> vehicles = new ArrayList<Vehicle>();
 	
 	@Mock
 	ParkingRepository parkingRepository;

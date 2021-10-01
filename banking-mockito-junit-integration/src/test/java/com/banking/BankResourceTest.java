@@ -1,11 +1,10 @@
 package com.banking;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
-import org.mockito.Matchers;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -19,17 +18,17 @@ public class BankResourceTest {
 	// Method of mocking without using @mock annotation
 	// private accountService accountService = Mockito.mock(accountService.class);
 	
-	private AccountResource accountResource;
+//	/private AccountResource accountResource;
 
-	@Before
-	public void setup() {
-		accountResource = new AccountResource(accountService);
-	}
+//	@Before
+//	public void setup() {
+//		accountResource = new AccountResource(accountService);
+//	}
 
 	//Alternate method of loading before the class loads. By using @injectMocks
 	
-//	@InjectMocks
-//	AccountResource accountResource;
+	@InjectMocks
+	AccountResource accountResource;
 	
 	@Test
 	public void shouldSaveaccount() {

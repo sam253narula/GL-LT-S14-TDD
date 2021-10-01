@@ -8,6 +8,7 @@ public class AccountDAO {
 	Map<Integer, Account> idToAccount = new HashMap<Integer, Account>();
 
 	public int save(Account account) {
+		System.out.println("not required print");
 		idToAccount.put(i, account);
 		return i++;
 	}
