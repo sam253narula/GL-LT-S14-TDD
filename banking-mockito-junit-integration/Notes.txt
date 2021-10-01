@@ -4,7 +4,8 @@ https://pitest.org/
 // To gain detailed understanding about how mutations are done by this PIT plugin and what are the disadvantages
 https://www.triology.de/en/blog-entries/mutation-testing
 
-
+// more details about mutators and types of mutation it does
+https://pitest.org/quickstart/mutators/
 
 //Open terminal and execute
 mvn org.pitest:pitest-maven:mutationCoverage
